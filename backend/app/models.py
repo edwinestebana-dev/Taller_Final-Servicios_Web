@@ -35,7 +35,7 @@ class Espacio(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True)
     nombre: Mapped[str] = mapped_column(String(100), nullable=False, unique=True)
-    tipo: Mapped[str] = mapped_column(String(30), nullable=False)  # aula, oficina, laboratorio, zona común
+    tipo: Mapped[str] = mapped_column(String(30), nullable=False)  # texto libre; ej.: aula, oficina, laboratorio
     ubicacion: Mapped[str] = mapped_column(String(100), nullable=False)  # edificio y piso
 
 
