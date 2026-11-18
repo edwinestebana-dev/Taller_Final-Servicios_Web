@@ -72,7 +72,7 @@ erDiagram
 |-------|------|---------------|
 | id | entero | PK |
 | nombre | texto | obligatorio, único |
-| tipo | texto | obligatorio (aula, oficina, laboratorio, zona común) |
+| tipo | texto | obligatorio (ej.: aula, oficina, laboratorio, zona común) |
 | ubicacion | texto | obligatorio (edificio y piso) |
 
 **reportes**
