@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reportes de fallas</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <!-- Barra superior: selector "Ingresar como" y menú según el rol -->
+  <header class="barra">
+    <h1>Reportes de fallas y mantenimiento</h1>
+    <label class="ingreso">
+      Ingresar como
+      <select id="selector-usuario">
+        <option value="">Seleccione un usuario…</option>
+      </select>
+    </label>
+    <nav id="menu" class="menu"></nav>
+  </header>
+
+  <!-- Mensajes de éxito o errores devueltos por el servidor -->
+  <div id="mensaje" class="mensaje oculto" role="alert"></div>
+
+  <!-- Aquí se dibuja la pantalla actual -->
+  <main id="contenido">
+    <p>Elija un usuario en «Ingresar como» para comenzar.</p>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
