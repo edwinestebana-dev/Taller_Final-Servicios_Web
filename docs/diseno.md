@@ -204,7 +204,7 @@ Los routers solo reciben la solicitud; las decisiones están en `services.py` y 
 | Evaluar | Coordinación | Rol; reporte existe; estado `reportado` (si no, 409); rechazo con comentario |
 | Asignar | Coordinación | Rol; reporte existe; estado `aprobado` (si no, 409); el responsable existe y tiene rol `mantenimiento` |
 | Registrar intervención | Responsable asignado | Rol; es el responsable de ese reporte (si no, 403); estado `asignado` o `en_atencion` (si no, 409); si estaba `asignado`, pasa a `en_atencion` |
-| Cerrar | Responsable asignado | Rol; es el responsable de ese reporte; estado `en_atencion` (si no, 409); resultado no vacío |
+| Cerrar | Responsable asignado | Rol; es el responsable de ese reporte (si no, 403); estado `en_atencion` (si no, 409); resultado no vacío |
 | Resumen | Coordinación | Rol |
 | Listar y ver detalle | Todos | Reportante solo los suyos; mantenimiento solo los asignados; coordinación todos. Un reporte no visible responde 404 |
 
