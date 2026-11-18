@@ -83,3 +83,37 @@ class ReporteDetalle(Salida):
     fecha_cierre: datetime | None
     # Historial en orden cronológico (RF-08)
     intervenciones: list[IntervencionSalida]
+
+
+# ---------- Acciones sobre un reporte ----------
+# Pydantic revisa el formato (campos y tipos). Las reglas que dependen del estado
+# del reporte se revisan en services.py, en el orden de la sección 4 del diseño.
+
+class EvaluacionEntrada(BaseModel):
+    decision: Literal["aprobar", "rechazar"]
+    # Opcional al aprobar; al rechazar es obligatorio (se revisa en services.py).
+    comentario: str | None = None
+
+
+class AsignacionEntrada(BaseModel):
+    responsable_id: int
+
+
+class IntervencionCrear(BaseModel):
+    descripcion: TextoNoVacio
+
+
+class CierreEntrada(BaseModel):
+    # Que no esté vacío se revisa en services.py, después del estado.
+    resultado: str
+
+
+class ResumenSalida(BaseModel):
+    """Conteo de reportes por estado (RF-11)."""
+
+    reportado: int
+    aprobado: int
+    rechazado: int
+    asignado: int
+    en_atencion: int
+    cerrado: int
