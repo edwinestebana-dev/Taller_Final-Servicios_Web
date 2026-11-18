@@ -72,7 +72,7 @@ erDiagram
 |-------|------|---------------|
 | id | entero | PK |
 | nombre | texto | obligatorio, único |
-| tipo | texto | obligatorio (aula, oficina, laboratorio, zona común) |
+| tipo | texto | obligatorio (ej.: aula, oficina, laboratorio, zona común) |
 | ubicacion | texto | obligatorio (edificio y piso) |
 
 **reportes**
@@ -204,7 +204,7 @@ Los routers solo reciben la solicitud; las decisiones están en `services.py` y 
 | Evaluar | Coordinación | Rol; reporte existe; estado `reportado` (si no, 409); rechazo con comentario |
 | Asignar | Coordinación | Rol; reporte existe; estado `aprobado` (si no, 409); el responsable existe y tiene rol `mantenimiento` |
 | Registrar intervención | Responsable asignado | Rol; es el responsable de ese reporte (si no, 403); estado `asignado` o `en_atencion` (si no, 409); si estaba `asignado`, pasa a `en_atencion` |
-| Cerrar | Responsable asignado | Rol; es el responsable de ese reporte; estado `en_atencion` (si no, 409); resultado no vacío |
+| Cerrar | Responsable asignado | Rol; es el responsable de ese reporte (si no, 403); estado `en_atencion` (si no, 409); resultado no vacío |
 | Resumen | Coordinación | Rol |
 | Listar y ver detalle | Todos | Reportante solo los suyos; mantenimiento solo los asignados; coordinación todos. Un reporte no visible responde 404 |
 
@@ -250,7 +250,49 @@ Historial de intervenciones (fecha, responsable, descripción)
 Acciones según rol y estado:  [Aprobar] [Rechazar] [Asignar] [Registrar intervención] [Cerrar]
 ```
 
-> Pendiente: insertar aquí las capturas del prototipo (Figma) o de la interfaz terminada, guardadas en `docs/prototipos/`.
+Pantalla inicial: se elige el usuario en «Ingresar como» y aparece el menú de su rol.
+
+![Selector Ingresar como](prototipos/inicio-ingresar-como.png)
+
+Reportante, Nuevo reporte: al enviar el formulario vacío se muestra el error 422 que devuelve el servidor.
+
+![Nuevo reporte con error del servidor](prototipos/reportante-nuevo-reporte-error.png)
+
+Reportante: el reporte registrado se abre en su detalle con estado Reportado.
+
+![Reporte registrado](prototipos/reportante-reporte-registrado.png)
+
+Reportante, Mis reportes: solo aparecen los reportes propios.
+
+![Mis reportes](prototipos/reportante-mis-reportes.png)
+
+Coordinación, Todos los reportes: listado con filtros por estado, espacio, tipo y responsable.
+
+![Lista de reportes con filtros](prototipos/coordinacion-lista-reportes.png)
+
+Coordinación: reporte rechazado con su motivo; ya no tiene acciones disponibles.
+
+![Reporte rechazado](prototipos/coordinacion-reporte-rechazado.png)
+
+Coordinación: reporte aprobado y asignado a un responsable de mantenimiento.
+
+![Reporte asignado](prototipos/coordinacion-reporte-asignado.png)
+
+Coordinación, Resumen: conteo de reportes por estado.
+
+![Resumen por estado](prototipos/coordinacion-resumen.png)
+
+Mantenimiento: reporte cerrado con su resultado y el historial de intervenciones.
+
+![Reporte cerrado por mantenimiento](prototipos/mantenimiento-reporte-cerrado.png)
+
+Reportante: consulta el resultado del cierre y el historial de su reporte.
+
+![Detalle cerrado visto por el reportante](prototipos/reportante-detalle-cerrado.png)
+
+Detalle de un reporte en la pantalla de un teléfono.
+
+![Detalle en teléfono](prototipos/detalle-en-telefono.png)
 
 ## 6. Correspondencia entre requisitos y diseño
 
