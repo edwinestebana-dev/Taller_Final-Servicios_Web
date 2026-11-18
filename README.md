@@ -16,7 +16,7 @@ Aplicación web para registrar fallas en los espacios de una organización y seg
 
 | Integrante | Usuario de GitHub | Contribución |
 |---|---|---|
-| Por completar (nombre completo) | `edwinestebana-dev` | Integrante único. Requisitos, diseño, backend (API REST, reglas de negocio y persistencia), frontend, pruebas funcionales y documentación. |
+| Edwin Esteban Arias Escobar | `edwinestebana-dev` | Integrante único. Requisitos, diseño, backend (API REST, reglas de negocio y persistencia), frontend, pruebas funcionales y documentación. |
 
 ## 2. Descripción del sistema
 
@@ -292,18 +292,18 @@ Las 12 pruebas funcionales mínimas de la guía están en [docs/pruebas.md](docs
 
 | Id | Prueba | Requisitos | Estado |
 |---|---|---|---|
-| P-01 | Registro de un reporte válido | RF-01, RF-02 | Ver [pruebas.md](docs/pruebas.md#p-01) |
-| P-02 | Registro con datos faltantes o inválidos | RF-01, RNF-01 | Ver [pruebas.md](docs/pruebas.md#p-02) |
-| P-03 | Consulta de reportes y detalle | RF-03, RF-04 | Ver [pruebas.md](docs/pruebas.md#p-03) |
-| P-04 | Consulta de un reporte inexistente | RF-04, RNF-04 | Ver [pruebas.md](docs/pruebas.md#p-04) |
-| P-05 | Evaluación válida | RF-05 | Ver [pruebas.md](docs/pruebas.md#p-05) |
-| P-06 | Transición de estado no permitida | RF-05, RF-06 | Ver [pruebas.md](docs/pruebas.md#p-06) |
-| P-07 | Asignación de un responsable autorizado | RF-06 | Ver [pruebas.md](docs/pruebas.md#p-07) |
-| P-08 | Gestión por un usuario no autorizado | RF-13, RNF-02 | Ver [pruebas.md](docs/pruebas.md#p-08) |
-| P-09 | Registro de una intervención válida | RF-07, RF-08 | Ver [pruebas.md](docs/pruebas.md#p-09) |
-| P-10 | Cierre y consulta de su resultado | RF-09, RF-10 | Ver [pruebas.md](docs/pruebas.md#p-10) |
-| P-11 | Consulta de información consolidada | RF-11, RF-12 | Ver [pruebas.md](docs/pruebas.md#p-11) |
-| P-12 | Integración interfaz–API–base de datos | RF-14, RNF-07 | Ver [pruebas.md](docs/pruebas.md#p-12) |
+| P-01 | Registro de un reporte válido | RF-01, RF-02 | Ver [Aprobada](docs/pruebas.md#p-01) |
+| P-02 | Registro con datos faltantes o inválidos | RF-01, RNF-01 | Ver [Aprobada](docs/pruebas.md#p-02) |
+| P-03 | Consulta de reportes y detalle | RF-03, RF-04 | Ver [Aprobada](docs/pruebas.md#p-03) |
+| P-04 | Consulta de un reporte inexistente | RF-04, RNF-04 | Ver [Aprobada](docs/pruebas.md#p-04) |
+| P-05 | Evaluación válida | RF-05 | Ver [Aprobada](docs/pruebas.md#p-05) |
+| P-06 | Transición de estado no permitida | RF-05, RF-06 | Ver [Aprobada](docs/pruebas.md#p-06) |
+| P-07 | Asignación de un responsable autorizado | RF-06 | Ver [Aprobada](docs/pruebas.md#p-07) |
+| P-08 | Gestión por un usuario no autorizado | RF-13, RNF-02 | Ver [Aprobada](docs/pruebas.md#p-08) |
+| P-09 | Registro de una intervención válida | RF-07, RF-08 | Ver [Aprobada](docs/pruebas.md#p-09) |
+| P-10 | Cierre y consulta de su resultado | RF-09, RF-10 | Ver [Aprobada](docs/pruebas.md#p-10) |
+| P-11 | Consulta de información consolidada | RF-11, RF-12 | Ver [Aprobada](docs/pruebas.md#p-11) |
+| P-12 | Integración interfaz–API–base de datos | RF-14, RNF-07 | Ver [Aprobada](docs/pruebas.md#p-12) |
 
 **Cómo reproducirlas:**
 1. Preparar una base limpia: borrar `backend/reportes.db`, ejecutar `python -m app.seed` y arrancar el servidor.
