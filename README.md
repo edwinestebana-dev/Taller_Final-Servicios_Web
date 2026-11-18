@@ -334,7 +334,7 @@ El detalle de cada paso está en [docs/pruebas.md, sección "Preparación"](docs
 | [#3](https://github.com/edwinestebana-dev/Taller_Final-Servicios_Web/pull/3) | `feature/evaluacion-asignacion-y-cierre` | Evaluación, asignación, intervenciones, cierre, resumen y transiciones de estado. |
 | [#4](https://github.com/edwinestebana-dev/Taller_Final-Servicios_Web/pull/4) | `docs/capturas-y-ajustes-diseno` | Capturas de la interfaz y ajustes del diseño. |
 | [#5](https://github.com/edwinestebana-dev/Taller_Final-Servicios_Web/pull/5) | `feature/frontend-por-rol` | Interfaz web por rol, servida por el backend. |
-| Por completar | `docs/pruebas-trazabilidad-readme` | Pruebas funcionales, matriz de trazabilidad y este README. |
+| [#7] | `docs/pruebas-trazabilidad-readme` | Pruebas funcionales, matriz de trazabilidad y este README. |
 
 **Aportes.**
 - El proyecto tiene un único integrante (`edwinestebana-dev`), autor de todos los commits y pull requests. Se pueden revisar en el [historial de commits](https://github.com/edwinestebana-dev/Taller_Final-Servicios_Web/commits/main) y en los [pull requests](https://github.com/edwinestebana-dev/Taller_Final-Servicios_Web/pulls?q=is%3Apr).
