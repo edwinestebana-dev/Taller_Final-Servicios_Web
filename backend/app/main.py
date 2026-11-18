@@ -1,11 +1,14 @@
-"""Punto de entrada de la aplicación: crea la app, las tablas y registra los routers.
+"""Punto de entrada de la aplicación: crea la app, las tablas, registra los routers y sirve el frontend.
 
 Uso (desde la carpeta backend/):  uvicorn app.main:app --reload
 """
 
+from pathlib import Path
+
 from fastapi import FastAPI, Request, status
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 
 from . import models  # noqa: F401  (importarlo registra las tablas en Base)
 from .database import Base, engine
@@ -58,6 +61,11 @@ async def responder_datos_invalidos(_request: Request, exc: RequestValidationErr
 app.include_router(usuarios.router)
 app.include_router(espacios.router)
 app.include_router(reportes.router)
+
+# Sirve la carpeta frontend/ en "/" (index.html, css y js). Se monta al final
+# para que las rutas de la API y /docs tengan prioridad.
+CARPETA_FRONTEND = Path(__file__).resolve().parents[2] / "frontend"
+app.mount("/", StaticFiles(directory=CARPETA_FRONTEND, html=True), name="frontend")
 
 
 if __name__ == "__main__":
